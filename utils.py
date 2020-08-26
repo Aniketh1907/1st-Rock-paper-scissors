@@ -18,3 +18,10 @@ def judge(player, computer):
         return 'Lose'
     else:
         return 'Win'
+
+def decide(player,computer):
+    if player<5 and computer>=5:
+        return False
+    elif player>=5 and computer<5:
+        return False
+    return True

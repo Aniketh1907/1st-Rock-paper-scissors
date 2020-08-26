@@ -6,7 +6,7 @@ print('Starting the Rock Paper Scissors game!')
 player_name = input('Please enter your name: ')
 player_count = 0
 computer_count = 0
-while player_count <5:
+while utils.decide(player_count,computer_count):
     print('Pick a hand: (0: Rock, 1: Paper, 2: Scissors)')
     player_hand = int(input('Please enter a number (0-2): '))
 
@@ -20,14 +20,21 @@ while player_count <5:
         result = utils.judge(player_hand, computer_hand)
         if result == 'Win':
             player_count+=1
+
         elif result == 'Lose':
             computer_count+=1
-
+        print("")
         print('Result: ' + result)
+        print("")
+        print("")
+        print(str(player_count)+" : "+str(computer_count))
+       # winner = utils.decide(player_count,computer_count)
     else:
         print('Please enter a valid number')
 if player_count>=5:
+    print("")
     print(player_name+' won')
 elif computer_count>=5:
+    print("")
     print('computer won')
     
